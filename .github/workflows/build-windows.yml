@@ -1,0 +1,37 @@
+name: Build Windows executable
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --noconfirm --windowed --name "Jump Rush" --add-data "images;images" --add-data "music;music" main.py
+
+      - name: Zip dist folder
+        run: |
+          powershell -Command "Compress-Archive -Path 'dist\Jump Rush\*' -DestinationPath 'dist\JumpRush-windows.zip' -Force"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JumpRush-windows
+          path: dist/JumpRush-windows.zip

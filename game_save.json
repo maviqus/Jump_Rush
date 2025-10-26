@@ -1,0 +1,42 @@
+{
+  "total_coins": 1951,
+  "unlocked_avatars": [
+    "avatar.png",
+    "Grenn Prison.png",
+    "Blue Lightning.png",
+    "Red Gen.png",
+    "Green Eye.png",
+    "Old Brown.png",
+    "Red Baby.png",
+    "Clown.png",
+    "Police.png"
+  ],
+  "completed_levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "best_times": {
+    "1": 19.09205389022827
+  },
+  "selected_avatar": "Red Gen.png",
+  "player_name": "Player",
+  "high_scores": {
+    "coins": [
+      {
+        "name": "Player",
+        "coins": 1949
+      }
+    ],
+    "times": {
+      "1": [
+        {
+          "name": "Player",
+          "time": 19.09205389022827
+        }
+      ]
+    }
+  }
+}
