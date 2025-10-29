@@ -1,5 +1,5 @@
 {
-  "total_coins": 1951,
+  "total_coins": 1956,
   "unlocked_avatars": [
     "avatar.png",
     "Grenn Prison.png",
@@ -19,7 +19,7 @@
     5
   ],
   "best_times": {
-    "1": 19.09205389022827
+    "1": 19.007643938064575
   },
   "selected_avatar": "Red Gen.png",
   "player_name": "Player",
@@ -27,14 +27,14 @@
     "coins": [
       {
         "name": "Player",
-        "coins": 1949
+        "coins": 1956
       }
     ],
     "times": {
       "1": [
         {
           "name": "Player",
-          "time": 19.09205389022827
+          "time": 19.007643938064575
         }
       ]
     }

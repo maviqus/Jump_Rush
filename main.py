@@ -1,18 +1,6 @@
-#  filename: main.py
-#  author: Yonah Aviv
-#  date created: 2020-11-10 6:21 p.m.
-#  last modified: 2020-11-18
-#  Pydash: Similar to Geometry Dash, a rhythm based platform game, but programmed using the pygame library in Python
 
 
-"""CONTROLS
-Anywhere -> ESC: exit
-Main menu -> 1: go to previous level. 2: go to next level. SPACE: start game.
-Game -> SPACE/UP: jump, and activate orb
-    orb: jump in midair when activated
-If you die or beat the level, press SPACE to restart or go to the next level
 
-"""
 
 import csv
 import os
@@ -689,7 +677,22 @@ font = pygame.font.SysFont("lucidaconsole", 20)
 
 # square block face is main character the icon of the window is the block face
 avatar = pygame.image.load(os.path.join("images", "avatar.png")).convert_alpha()  # load the main character
-pygame.display.set_icon(avatar)
+# Prefer a project logo at images/logo/logo.png. If not present, try the original jpeg, else use avatar.
+logo_png = os.path.join("images", "logo", "logo.png")
+logo_jpeg = os.path.join("images", "logo", "8BD04758-5515-4BA2-986B-ADB32483A7BC_4_5005_c.jpeg")
+logo_icon = None
+for p in (logo_png, logo_jpeg):
+    if os.path.exists(p):
+        try:
+            logo_icon = pygame.image.load(p).convert_alpha()
+            break
+        except Exception:
+            logo_icon = None
+            continue
+if logo_icon:
+    pygame.display.set_icon(logo_icon)
+else:
+    pygame.display.set_icon(avatar)
 #  this surface has an alpha value with the colors, so the player trail will fade away using opacity
 alpha_surf = pygame.Surface(screen.get_size(), pygame.SRCALPHA)
 
